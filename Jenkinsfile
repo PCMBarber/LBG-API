@@ -20,7 +20,7 @@ pipeline {
 		}
         stage('Cleanup'){
 			steps{
-            sh 'docker system prune'
+            sh 'docker system prune -f'
 			}
 		}
     }
