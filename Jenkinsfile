@@ -21,7 +21,8 @@ pipeline {
 		}
         stage('Cleanup'){
 			steps{
-            sh 'docker system prune -f'
+            sh 'docker rmi gcr.io/lbg-210222/api-piers:latest'
+			sh 'docker rmi gcr.io/lbg-210222/api-piers:build-$BUILD_NUMBER'
 			}
 		}
     }
