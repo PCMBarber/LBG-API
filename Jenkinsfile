@@ -6,7 +6,7 @@ pipeline {
 			sh 'docker build -t gcr.io/lbg-210222/api-piers:latest -t gcr.io/lbg-210222/api-piers:build-$BUILD_NUMBER .'
 			}
 		}
-		stage('Push to Dockerhub'){
+		stage('Push GCR'){
 			steps{
             sh 'docker push gcr.io/lbg-210222/api-piers:build-$BUILD_NUMBER gcr.io/lbg-210222/api-piers:latest'
 			}
