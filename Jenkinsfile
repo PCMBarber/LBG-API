@@ -8,7 +8,8 @@ pipeline {
 		}
 		stage('Push GCR'){
 			steps{
-            sh 'docker push gcr.io/lbg-210222/api-piers:build-$BUILD_NUMBER gcr.io/lbg-210222/api-piers:latest'
+            sh 'docker push gcr.io/lbg-210222/api-piers:build-$BUILD_NUMBER'
+			sh 'docker push gcr.io/lbg-210222/api-piers:latest'
 			}
 		}
 		stage('Reapply '){
